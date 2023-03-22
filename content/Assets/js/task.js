@@ -149,6 +149,7 @@ function changeTaskText(textBlock){
     }
     if(!userAuth){
         alert('Авторизуйтесь');
+        return;
     }
 
     $(textBlock).addClass('change')
