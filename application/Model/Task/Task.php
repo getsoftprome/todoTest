@@ -75,6 +75,7 @@ class Task extends \Core\Model {
     }
 
     public function changeTaskText($taskId,$taskText){
+        $taskText = mb_substr(trim(strip_tags($taskText)), 0, 200);
         $userModel = new User();
         $user = $userModel->getUser($_COOKIE['hash']);
         if(empty($user)){
